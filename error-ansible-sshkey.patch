@@ -1,0 +1,11 @@
+--- .env/lib/python3.5/site-packages/ansible/modules/cloud/digital_ocean/digital_ocean_sshkey.py.orig	2019-08-31 15:01:22.606761500 -0700
++++ .env/lib/python3.5/site-packages/ansible/modules/cloud/digital_ocean/digital_ocean_sshkey.py	2019-08-31 15:02:23.758253300 -0700
+@@ -107,7 +107,7 @@
+                 return json.loads(self.info["body"])
+             return None
+         try:
+-            return json.loads(self.body)
++            return json.loads(self.body.decode())
+         except ValueError:
+             return None
+ 
